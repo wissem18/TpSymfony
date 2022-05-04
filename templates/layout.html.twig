@@ -22,12 +22,15 @@
     </div>
 {% endfor %}
 {% for value in app.session.flashBag.get('error') %}
-<div class="alert alert-warning">
+<div class="alert alert-danger">
     {{ value }}
     {%endfor%}
 </div>
 {%block body%}
 pssst hot lblock body
 {%endblock%}
+<div class="position-absolute bottom-0 end-0 alert alert-danger">
+{{"now"|date('Y-m-d H:i:s')}}
+</div>
 </body>
 </html>
