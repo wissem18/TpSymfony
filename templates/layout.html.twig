@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{asset('node_modules/bootstrap/dist/css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{asset('node_modules/bootstrap-icons/font/bootstrap-icons.css')}}">
+    <link rel="stylesheet" href="node_modules/bootswatch/dist/{%block theme %}{%endblock%}/bootstrap.css">
+    <title>{%block pageTitle%}Document{%endblock%}</title>
+</head>
+<body>
+{% for value in app.session.flashBag.get('warning') %}
+    <div class="alert alert-warning">
+        {{ value }}
+    </div>
+{% endfor %}
+{% for value in app.session.flashBag.get('success') %}
+    <div class="alert alert-success">
+        {{ value }}
+    </div>
+{% endfor %}
+{% for value in app.session.flashBag.get('error') %}
+<div class="alert alert-warning">
+    {{ value }}
+    {%endfor%}
+</div>
+{%block body%}
+pssst hot lblock body
+{%endblock%}
+</body>
+</html>
