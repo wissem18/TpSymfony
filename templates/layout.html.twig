@@ -26,6 +26,11 @@
     {{ value }}
     {%endfor%}
 </div>
+{% for value in app.session.flashBag.get('info') %}
+<div class="alert alert-info">
+    {{ value }}
+    {%endfor%}
+</div>
 {%block body%}
 pssst hot lblock body
 {%endblock%}
