@@ -1,2 +1,26 @@
+{%extends 'layout.html.twig'%}
 
-
+{%block pageTitle%}Statistiques{%endblock%}
+{%block body%}
+    <div class="row">
+    {%for entreprise in entreprises%}
+<div class="card text-white m-auto bg-primary mb-3 " style="width: 18rem;">
+    <div class="card-header">{{entreprise.getDesignation()}}</div>
+    <div class="card-body">
+        <h5 class="card-title">{{entreprise.getPFEs()|length}} Pfe(s)</h5>
+    </div>
+</div>
+    {%endfor%}
+    </div>
+{#  tab3a lmethode ls3iba  #}
+{#        <div class="row">#}
+{#        {%for stat in stats%}#}
+{#    <div class="card text-white m-auto bg-primary mb-3 " style="width: 18rem;">#}
+{#        <div class="card-header">{{stat.0.entreprise.getDesignation}}</div>#}
+{#        <div class="card-body">#}
+{#            <h5 class="card-title">{{stat.1}} Pfe(s)</h5>#}
+{#        </div>#}
+{#    </div>#}
+{#        {%endfor%}#}
+{#        </div>#}
+{%endblock%}

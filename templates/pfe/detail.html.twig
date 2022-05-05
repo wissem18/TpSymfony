@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+{% block body %}
+        <div class="card m-auto mb-2" style="width: 18rem;">
+                <div class="card-body">
+                        <h5 class="card-title">{{pfe.title}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Student:{{pfe.student}}</h6>
+                        <p class="card-text">Entreprise: {{pfe.entreprise}}</p>
+
+                </div>
+        </div>
+{% endblock %}
+
+{% block pageTitle %}
+Details of {{pfe.getTitle}}
+{% endblock %}
+

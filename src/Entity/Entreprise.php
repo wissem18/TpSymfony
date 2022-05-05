@@ -21,6 +21,7 @@ class Entreprise
     #[ORM\OneToMany(mappedBy: 'entreprise', targetEntity: PFE::class)]
     private $pFEs;
 
+
     public function __construct()
     {
         $this->pFEs = new ArrayCollection();
@@ -76,4 +77,5 @@ class Entreprise
     {
         return $this->getDesignation();
     }
+
 }
