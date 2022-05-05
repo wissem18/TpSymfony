@@ -1,0 +1,16 @@
+{%extends 'layout.html.twig'%}
+{%block theme %}lumen{%endblock%}
+{%block pageTitle%}Liste de pfe{%endblock%}
+{%block body%}
+    <div class="row">
+        {%for pfe in pfes%}
+            <div class="card m-auto mb-2" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{pfe.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{pfe.student}}</h6>
+                    <p class="card-text">Age: {{pfe.entreprise}}</p>
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+{%endblock%}
