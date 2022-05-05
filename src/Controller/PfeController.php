@@ -41,5 +41,10 @@ class PfeController extends AbstractController
         $pfes=$repository->findAll();
         return $this->render('pfe/index.html.twig',['pfes'=>$pfes]);
     }
-
+#[Route('/stats', name: 'pfe.stats')]
+public function showStats(ManagerRegistry $doctrine):Response{
+    $repository=$doctrine->getRepository(PFE::class);
+    $pfes=$repository->findAll();
+    return $this->render('pfe/stats.html.twig',['pfes'=>$pfes]);
+}
 }
