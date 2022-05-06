@@ -1,11 +1,11 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-        <div class="card m-auto mb-2" style="width: 18rem;">
+        <div class="card bg-light position-absolute top-0 start-0" style="width: 18rem;">
                 <div class="card-body">
                         <h5 class="card-title">{{pfe.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Student:{{pfe.student}}</h6>
                         <p class="card-text">Entreprise: {{pfe.entreprise}}</p>
-
+                        <a href="{{  path('pfe.add',{'id':pfe.id})}}" class="card-link"><i class="bi bi-pencil-fill" style="font-size: 2rem;color: darkslategrey"></i></a>
                 </div>
         </div>
 {% endblock %}

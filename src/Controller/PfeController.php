@@ -62,7 +62,7 @@ public function showStats(ManagerRegistry $doctrine):Response{
     $repository=$doctrine->getRepository(Entreprise::class);
     $entreprises=$repository->findAll();
     return $this->render('pfe/stats.html.twig',['entreprises'=>$entreprises]);
-//    itha theb tkasser rasek wa illa ma3mltch attribute pfes yinversi lrelation binet les 2 tables tekhdem hekka
+//    itha theb tekhdem bl querybuilder wa illa ma3mltch attribute pfes yinversi lrelation binet les 2 tables tekhdem hekka
 //    $repository=$doctrine->getRepository(PFE::class);
 //    $stats=$repository->numberPfeByEntreprise();
 //    return $this->render('pfe/stats.html.twig',['stats'=>$stats]);
