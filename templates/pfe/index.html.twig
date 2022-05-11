@@ -2,6 +2,14 @@
 
 {%block pageTitle%}Liste de pfe{%endblock%}
 {%block body%}
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{{path('pfe.stats')}}">
+                <i class="bi bi-file-earmark-bar-graph-fill"></i>
+                Show stats
+            </a>
+        </div>
+    </nav>
     <div class="row">
         {%for pfe in pfes%}
             <div class="card m-auto mb-2" style="width: 20rem;">

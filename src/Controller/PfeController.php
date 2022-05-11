@@ -59,12 +59,14 @@ class PfeController extends AbstractController
     }
 #[Route('/stats', name: 'pfe.stats')]
 public function showStats(ManagerRegistry $doctrine):Response{
-    $repository=$doctrine->getRepository(Entreprise::class);
-    $entreprises=$repository->findAll();
-    return $this->render('pfe/stats.html.twig',['entreprises'=>$entreprises]);
-//    itha theb tekhdem bl querybuilder wa illa ma3mltch attribute pfes yinversi lrelation binet les 2 tables tekhdem hekka
-//    $repository=$doctrine->getRepository(PFE::class);
-//    $stats=$repository->numberPfeByEntreprise();
-//    return $this->render('pfe/stats.html.twig',['stats'=>$stats]);
+   // 1ere méthode:
+    $repository=$doctrine->getRepository(PFE::class);
+    $stats=$repository->numberPfeByEntreprise();
+    return $this->render('pfe/stats.html.twig',['stats'=>$stats]);
+    //2eme méthode:
+//    $repository=$doctrine->getRepository(Entreprise::class);
+//    $entreprises=$repository->findAll();
+//    return $this->render('pfe/stats.html.twig',['entreprises'=>$entreprises]);
+
 }
 }

@@ -2,25 +2,46 @@
 
 {%block pageTitle%}Statistiques{%endblock%}
 {%block body%}
-    <div class="row">
-    {%for entreprise in entreprises%}
-<div class="card text-white m-auto bg-{{random(['primary','secondary','success','danger','warning','info','dark'])}} mb-3 " style="width: 18rem;">
-    <div class="card-header">{{entreprise.getDesignation()}}</div>
-    <div class="card-body">
-        <h5 class="card-title">{{entreprise.getPFEs()|length}} Pfe(s)</h5>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#">TP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="{{path('pfe.list')}}">Liste des PFEs</a>
+                    <a class="nav-link" href="{{path('pfe.add')}}">Ajouter un pfe</a>
+                    <a class="nav-link" href="{{path('pfe.stats')}}">Stats</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header">
+<h1>Nombre de PFE par entreprise</h1>
     </div>
-</div>
-    {%endfor%}
-    </div>
-{#  tab3a lmethode lthanya #}
-{#        <div class="row">#}
-{#        {%for stat in stats%}#}
-{#    <div class="card text-white m-auto bg-primary mb-3 " style="width: 18rem;">#}
-{#        <div class="card-header">{{stat.0.entreprise.getDesignation}}</div>#}
-{#        <div class="card-body">#}
-{#            <h5 class="card-title">{{stat.1}} Pfe(s)</h5>#}
-{#        </div>#}
+{#    l'affichage pour la 1ere méthode #}
+            <div class="row">
+                {% set array = ['primary','info'] %}
+                {%for stat in stats%}
+        <div class="card text-white m-auto bg-{{array[loop.index%2]}} m-auto bg-primary mb-3 " style="width: 18rem;">
+            <div class="card-header">{{stat.0.entreprise.designation}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{stat.1}} Pfe(s)</h5>
+            </div>
+        </div>
+            {%endfor%}
+            </div>
+{#  l'affichage pour la 2eme méthode #}
+{#    <div class="row">#}
+{#    {%for entreprise in entreprises%}#}
+{#<div class="card text-white m-auto bg-{{random(['primary','secondary','success','danger','warning','info','dark'])}} mb-3 " style="width: 18rem;">#}
+{#    <div class="card-header">{{entreprise.getDesignation()}}</div>#}
+{#    <div class="card-body">#}
+{#        <h5 class="card-title">{{entreprise.getPFEs()|length}} Pfe(s)</h5>#}
 {#    </div>#}
-{#        {%endfor%}#}
-{#        </div>#}
+{#</div>#}
+{#    {%endfor%}#}
+{#    </div>#}
+
 {%endblock%}

@@ -1,6 +1,21 @@
 {% extends 'layout.html.twig' %}
 {% block body %}
-        <div class="card bg-light position-absolute top-0 start-0" style="width: 18rem;">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                        <a class="navbar-brand " href="#">TP</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                        <a class="nav-link active" aria-current="page" href="{{path('pfe.list')}}">Liste des PFEs</a>
+                                        <a class="nav-link" href="{{path('pfe.add')}}">Ajouter un pfe</a>
+                                        <a class="nav-link" href="{{path('pfe.stats')}}">Stats</a>
+                                </div>
+                        </div>
+                </div>
+        </nav>
+        <div class="card bg-light" style="width: 18rem;">
                 <div class="card-body">
                         <h5 class="card-title">{{pfe.title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Student:{{pfe.student}}</h6>
